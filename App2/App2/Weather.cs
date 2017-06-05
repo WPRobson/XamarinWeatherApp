@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace App2
+﻿namespace App2
 {
-        public class Rootobject
+    public class Rootobject
         {
             public string cod { get; set; }
             public float message { get; set; }

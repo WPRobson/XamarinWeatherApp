@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-
+﻿using Newtonsoft.Json;
 using System.Net.Http;
-using Newtonsoft.Json.Linq;
-using System.Threading;
+using System.Threading.Tasks;
 
 namespace App2
 {
@@ -18,10 +11,10 @@ namespace App2
 
         public async Task<Rootobject> GetWeatherByCity(string city, string country)
         {
-            
+
             string request = $"http://api.openweathermap.org/data/2.5/forecast?q={city},{country}&appid={apiKey}";
 
-            object responceJson = await sendRequest(request);
+            object responceJson = await SentHttpRequest(request);
 
             var weatherJson = JsonConvert.SerializeObject(responceJson);
             Rootobject weatherRoot = JsonConvert.DeserializeObject<Rootobject>(weatherJson);
@@ -29,7 +22,7 @@ namespace App2
             return weatherRoot;
         }
 
-        async Task<object> sendRequest(string url)
+        async Task<object> SentHttpRequest(string url)
         {
             string data = string.Empty;
             using (HttpClient client = new HttpClient())

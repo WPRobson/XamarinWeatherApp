@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace App2
+﻿namespace App2
 {
     public class MyClass
     {

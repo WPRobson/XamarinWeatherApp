@@ -9,7 +9,7 @@ using UIKit;
 
 namespace App2.iOS
 {
-	[Register ("ViewController")]
+    [Register ("ViewController")]
 	partial class ViewController
 	{
 		[Outlet]
