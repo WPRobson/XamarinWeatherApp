@@ -35,6 +35,14 @@ namespace App2
             return result;
         }
 
+        public Rootobject ConventToWeatherObject(string data)
+        {
+            var weatherJson = JsonConvert.SerializeObject(data);
+            Rootobject weatherRoot = JsonConvert.DeserializeObject<Rootobject>(weatherJson);
+            return weatherRoot;
+
+        }
+
 
 
 

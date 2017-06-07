@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+    <TextView
+        android:text="City"
+        android:id="@+id/cityText"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="20.5dp"
+        android:layout_toLeftOf="@+id/CityInput"
+        android:layout_marginTop="10.0dp"
+        android:layout_marginBottom="13.5dp" />
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/CityInput" />
+    <TextView
+        android:text="Country"
+        android:id="@+id/countryText"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="20.5dp"
+        android:layout_toLeftOf="@+id/countryInput"
+        android:layout_marginTop="10.0dp"
+        android:layout_below="@id/cityText"
+        android:layout_marginBottom="13.5dp" />
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/cityText"
+        android:id="@+id/countryInput" />
     <Button
         android:id="@+id/myButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
-    <Button
-        android:text="Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button1" />
-</LinearLayout>
+        android:text="@string/hello"
+        android:layout_marginTop="20.0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/countryInput" />
+</RelativeLayout>
