@@ -9,17 +9,19 @@ namespace App2
         string apiKey = "ab1d78836a5167c088ff690b2db29bf8";
 
 
-        public async Task<Rootobject> GetWeatherByCity(string city, string country)
+        public async Task<string> GetWeatherByCity(string city, string country)
         {
 
             string request = $"http://api.openweathermap.org/data/2.5/forecast?q={city},{country}&appid={apiKey}";
 
             object responceJson = await SentHttpRequest(request);
 
-            var weatherJson = JsonConvert.SerializeObject(responceJson);
-            Rootobject weatherRoot = JsonConvert.DeserializeObject<Rootobject>(weatherJson);
+            string returnString = JsonConvert.SerializeObject(responceJson);
 
-            return weatherRoot;
+            //var weatherJson = JsonConvert.SerializeObject(responceJson);
+            //Rootobject weatherRoot = JsonConvert.DeserializeObject<Rootobject>(weatherJson);
+
+            return returnString;
         }
 
         async Task<object> SentHttpRequest(string url)
@@ -37,8 +39,8 @@ namespace App2
 
         public Rootobject ConventToWeatherObject(string data)
         {
-            var weatherJson = JsonConvert.SerializeObject(data);
-            Rootobject weatherRoot = JsonConvert.DeserializeObject<Rootobject>(weatherJson);
+            //var weatherJson = JsonConvert.SerializeObject(data);
+            Rootobject weatherRoot = JsonConvert.DeserializeObject<Rootobject>(data);
             return weatherRoot;
 
         }

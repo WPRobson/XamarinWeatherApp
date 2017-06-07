@@ -35,10 +35,10 @@ namespace App2.Droid
 
 				if (country != null && city != null)
 				{
-					Rootobject weather = await newWeather.GetWeatherByCity(city, country);
-					string extraIntentData = weather.ToString();
+					string weather = await newWeather.GetWeatherByCity(city, country);
+					//string extraIntentData = weather.ToString();
 					var weatherActivity = new Intent(this,typeof(WeatherStatsActivity));
-					weatherActivity.PutExtra("weatherData", extraIntentData);
+					weatherActivity.PutExtra("weatherData", weather);
 					StartActivity(weatherActivity);
 				}
 				
